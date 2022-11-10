@@ -35,3 +35,13 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test
+        
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.1
+
+      - name: Azure WebApp
+        uses: Azure/webapps-deploy@v2
+
